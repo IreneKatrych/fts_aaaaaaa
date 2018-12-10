@@ -1,0 +1,35 @@
+﻿@model List<fts_aaaaaaa.Models.MeasureResult>
+@{
+    /**/
+
+    ViewBag.Title = "Вага";
+}
+
+<h2>Ваші показники</h2>
+
+<script src="~/Scripts/Chart.js"></script>
+
+<canvas id="myChart" width="300" height="120"></canvas>
+<script>
+    var ctx = document.getElementById("myChart").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: @Html.Raw(Json.Encode(Model.Select(x=>x.CreatedDate.ToString("M")))),
+            datasets: [{
+                label: 'Показники в кг',
+                data: @Html.Raw(Json.Encode(Model.Select(x => x.Value))),
+                borderColor: ['green']
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+</script>

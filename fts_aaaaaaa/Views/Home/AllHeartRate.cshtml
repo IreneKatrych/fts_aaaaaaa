@@ -1,0 +1,35 @@
+﻿@model IEnumerable<fts_aaaaaaa.Models.MeasureResult>
+
+@{
+    ViewBag.Title = "Всі показники";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Всі показники</h2>
+
+
+<table class="table">
+    <tr class="header">
+        <td><p>Значення</p></td>
+        <td><p>Дата</p></td>
+        <td></td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Value)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+
+            <td>
+                @Html.ActionLink("Редагувати", "EditHeartRate", new { id = item.Id }) |
+                @Html.ActionLink("Видалити", "DeleteHeartRate", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

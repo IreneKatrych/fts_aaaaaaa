@@ -1,0 +1,36 @@
+﻿@model fts_aaaaaaa.Models.BloodPressure
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    ViewBag.Title = "Додайте нові дані";
+}
+
+<h2>Показники артеріального тиску</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.LowPressure, "Діастолічний (нижній) тиск")
+    <br /><p>Будь ласка вводьте цілочисельні дані. Наприклад 70</p>
+    <br />
+    <br />
+    @Html.EditorFor(model => model.LowPressure)
+    @Html.ValidationMessageFor(model => model.LowPressure)
+    <br /><br />
+    @Html.LabelFor(model => model.UpPressure, "Систолічний (верхній) тиск")
+    <br /><p>Будь ласка вводьте цілочисельні дані. Наприклад 120</p>
+    <br />
+    <br />
+    @Html.EditorFor(model => model.UpPressure)
+    @Html.ValidationMessageFor(model => model.UpPressure)
+    <br /><br />
+    @Html.LabelFor(model => model.CreatedDate, "Поточна дата")
+    <br />
+    @Html.EditorFor(model => model.CreatedDate)
+    @Html.ValidationMessageFor(model => model.CreatedDate)
+    <br /><br />
+    @Html.HiddenFor(m => m.UserId)
+    <br /><br />
+    <input type="submit" value="Додати" />
+}

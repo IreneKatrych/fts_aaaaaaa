@@ -1,31 +1,122 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Головна";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<!-- Carousel
+   ================================================== -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img class="first-slide" src="https://image.ibb.co/gZu12A/1.jpg" alt="First slide">
+            <div class="container">
+                <div class="carousel-caption">
+                    <p>Зручний сервіс, який допоможе вам слідкувати за своїм здоров'ям</p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img class="second-slide" src="https://preview.ibb.co/ii8E9q/001.jpg" alt="Second slide">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Aктуальні статті</h1>
+                    <p>Ми пропонуєм нашим користувачам сучасні та цікаві статті про медицину, здоров'я та міфи пов'язані з ними. Кожна публікація не тільки науково достовірна, але й написана простою та живою мовою</p>
+                    <p>@Html.ActionLink("Дізнатись більше", "About")</p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img class="third-slide" src="https://image.ibb.co/hdcrpq/ca53c24343dafb5daee6c0880b209788.jpg" alt="Third slide">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Зв'яжіться з нами</h1>
+                    <p>Якщо у вас є ідеї щодо вдосконалення нашого сервісу чи співпраці ви можите в будь який момент зв'язатись з нами </p>
+                    <p>@Html.ActionLink("Детальніше", "Contact")</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Попередній</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Наступний</span>
+    </a>
+</div><!-- /.carousel -->
+<!-- START THE FEATURETTES -->
+<hr class="featurette-divider">
+<div class="row featurette">
+    <div class="col-md-7">
+        <h3 class="featurette-heading">Температура! <span class="text-muted">Всіх нас взимку вона турбує.</span></h3>
+        <p class="lead">Температура на вулиці - треба ж тепло вдягнутись, але не надто. Температура вдомі (Рахунки за газ?! Де мій корвалол?..). Але ми всі забуваєм про температуру нашого тіла доки вона не стає причиною наших недомагань</p>
+        <p>@Html.ActionLink("Переглянути показники температури", "Temperature")</p>
+        <p>@Html.ActionLink("Ввести показники температури", "AddTemperature")</p>
+        <p>@Html.ActionLink("Всі показники температури", "AllTemperature")</p>
+    </div>
+    <div class="col-md-5">
+        <img class="featurette-image img-responsive center-block" src="https://i.ibb.co/WBdV8ZG/Pics-Art-12-03-01-08-34.jpg" alt="Generic placeholder image">
+    </div>
 </div>
+<hr class="featurette-divider">
+<div class="row featurette">
+    <div class="col-md-7 col-md-push-5">
+        <h3 class="featurette-heading">Проблеми з тиском? <span class="text-muted"> </span></h3>
+        <p class="lead">Гіпертонія? Гіпотонія? Перепади атмосферного тиску впливають на ваш? Не переживайте так, зараз кожна третя людина з цим стикається. Наш сервіс допоможе вам відслідковувати показники вашого тиску</p>
+        <p>@Html.ActionLink("Переглянути показники тиску", "BloodPressure")</p>
+        <p>@Html.ActionLink("Ввести показники тиску", "AddBloodPressure")</p>
+        <p>@Html.ActionLink("Всі показники тиску", "AllBloodPressure")</p>
+    </div>
+    <div class="col-md-5 col-md-pull-7">
+        <img class="featurette-image img-responsive center-block" src="https://i.ibb.co/3Nt5hxR/Pics-Art-12-03-01-04-01.jpg" alt="Generic placeholder image">
+    </div>
+</div>
+<hr class="featurette-divider">
+<div class="row featurette">
+    <div class="col-md-7">
+        <h3 class="featurette-heading">Рівень цукру. <span class="text-muted">Так, в нас і таке є</span></h3>
+        <p class="lead">Діабет - це страшна хвороба і наш сервіс допоможе людям, які з нею зіткнулись, відслідковувати рівень цукру в крові</p>
+        <p>@Html.ActionLink("Переглянути показники рівня цукру", "BloodSugar")</p>
+        <p>@Html.ActionLink("Ввести показники рівня цукру", "AddBloodSugar")</p>
+        <p>@Html.ActionLink("Всі показники рівня цукру", "AllBloodSugar")</p>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <div class="col-md-5">
+        <img class="featurette-image img-responsive center-block" src="https://i.ibb.co/M7yGtsw/Pics-Art-12-03-01-02-22.jpg" alt="Generic placeholder image">
     </div>
 </div>
+<hr class="featurette-divider">
+<div class="row featurette">
+    <div class="col-md-7 col-md-push-5">
+        <h3 class="featurette-heading">Бажаєте слідкувати за своєю вагою? <span class="text-muted">Ми вам в цьому допоможемо </span></h3>
+        <p class="lead">Багато людей занепокоєні своєю вагою. Хтось без вагомої причини, просто тому що так зараз прийнято, а для когось це дійсно необхідно. Ми ж просто допомагаєм нашим користувачам відслідковувати зміни ваги</p>
+        <p>@Html.ActionLink("Переглянути показники ваги", "Weight")</p>
+        <p>@Html.ActionLink("Ввести показники ваги", "AddWeight")</p>
+        <p>@Html.ActionLink("Всі показники ваги", "AllWeight")</p>
+
+    </div>
+    <div class="col-md-5 col-md-pull-7">
+        <img class="featurette-image img-responsive center-block" src="https://i.ibb.co/p1dh0N0/Pics-Art-12-03-01-07-50.jpg" alt="Generic placeholder image">
+    </div>
+</div>
+<hr class="featurette-divider">
+<div class="row featurette">
+    <div class="col-md-7">
+        <h3 class="featurette-heading">Пульс <span class="text-muted"></span></h3>
+        <p class="lead">Мало хто задумується над тим, що швидкість серцебиття також варто моніторити. Люди схильні згадувати про цей важливий орган тільки коли їх наздоженуть не надто приємні наслідки аритмії та при прочитанні "мильних" романчиків...</p>
+        <p>@Html.ActionLink("Переглянути показники пульсу","HeartRate")</p>
+        <p>@Html.ActionLink("Ввести показники пульсу", "AddHeartRate")</p>
+        <p>@Html.ActionLink("Всі показники пульсу", "AllHeartRate")</p>
+        </div>
+    <div class="col-md-5">
+        <img class="featurette-image img-responsive center-block" src="https://i.ibb.co/ZJtmnSX/Best-and-Worst-Ways-to-Check-Your-Heart-Rate-722x406.jpg" alt="Generic placeholder image">
+    </div>
+</div>
+<hr class="featurette-divider">
+<!-- /END THE FEATURETTES -->

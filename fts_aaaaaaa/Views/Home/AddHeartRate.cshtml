@@ -1,0 +1,30 @@
+﻿@model fts_aaaaaaa.Models.MeasureResult
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    ViewBag.Title = "Додайте нові дані";
+}
+
+<h2>Показники пульсу</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Value, "Пульс")
+    <br /><p>Будь ласка вводьте цілочисельні дані. Наприклад 70</p>
+    <br />
+    <br />
+    @Html.EditorFor(model => model.Value)
+    @Html.ValidationMessageFor(model => model.Value)
+    <br /><br />
+    @Html.LabelFor(model => model.CreatedDate, "Поточна дата")
+    <br />
+    @Html.EditorFor(model => model.CreatedDate)
+    @Html.ValidationMessageFor(model => model.CreatedDate)
+    <br /><br />
+    @Html.HiddenFor(m => m.MeasureId)
+    @Html.HiddenFor(m => m.UserId)
+    <br /><br />
+    <input type="submit" value="Додати" />
+}

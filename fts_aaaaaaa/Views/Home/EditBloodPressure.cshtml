@@ -1,0 +1,43 @@
+﻿@model fts_aaaaaaa.Models.BloodPressure
+
+@{
+    ViewBag.Title = "Редагувати показники";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Показник № @Model.Id</h2>
+@using (Html.BeginForm("EditBloodPressure", "Home", FormMethod.Post))
+{
+<fieldset>
+    @Html.HiddenFor(m => m.Id)
+    <p>
+        @Html.LabelFor(m => m.LowPressure, "Значення діастолічного (нижнього) тиску")
+        <br />
+    <p>Будь ласка вводьте цілочисельні дані. Наприклад 70</p>
+    <br />
+    <br />
+    @Html.EditorFor(m => m.LowPressure)
+    @Html.ValidationMessageFor(model => model.LowPressure)
+    </p>
+    <p>
+        @Html.LabelFor(m => m.UpPressure, "Значення систолічного (верхнього) тиску")
+        <br />
+    <p>Будь ласка вводьте цілочисельні дані. Наприклад 120</p>
+    <br />
+    <br />
+    @Html.EditorFor(m => m.UpPressure)
+    @Html.ValidationMessageFor(model => model.UpPressure)
+    </p>
+    <p>
+        @Html.LabelFor(m => m.CreatedDate, "Дата")
+        <br />
+        @Html.EditorFor(m => m.CreatedDate)
+        @Html.ValidationMessageFor(model => model.CreatedDate)
+    </p>
+
+    <p><input type="submit" value="Відправити" /></p>
+</fieldset>
+}
+
+<div>
+    @Html.ActionLink("Назад до списку", "AllBloodPressure")
+</div>

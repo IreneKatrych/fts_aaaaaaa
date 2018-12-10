@@ -1,0 +1,53 @@
+﻿@model fts_aaaaaaa.Models.BloodPressure
+
+@{
+    /**/
+
+    ViewBag.Title = "Видалення";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Видалити</h2>
+
+<h3>Ви впевнені що хочете видалити це?</h3>
+<div>
+    <h4>Показники </h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.LabelFor(model => model.LowPressure, "Діастолічний (нижній) тиск")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LowPressure)
+        </dd>
+
+        <dt>
+            @Html.LabelFor(model => model.UpPressure, "Систолічний (верхній) тиск")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpPressure)
+        </dd>
+
+        <dt>
+            @Html.LabelFor(model => model.CreatedDate, "Дата")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Видалити" class="btn btn-default" /> |
+            @Html.ActionLink("Назад до списку", "AllBloodPressure")
+        </div>
+    }
+</div>
